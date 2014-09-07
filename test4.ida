@@ -1,0 +1,7 @@
+# the and or xor test for the CPU design
+MOV $a0 0
+MOV $a1 0xf
+CMP $a0 $a1
+AND ?LT $t1 $a1 $a0
+IOR ?LT $t2 $a1 $a0
+XOR ?LT $t3 $a1 $a0

@@ -1,0 +1,29 @@
+     
+     MOV $a0 2
+     MOV $a1 3
+     MOV $a2 4
+     MOV $a3 5
+     JAL @COMP
+     MOV $rv $t3
+     END
+
+     # compare the value of inputs and do following operations
+
+COMP:CMP $a0 2      
+     JAL ?EQ @CA0    
+     CMP $a0 $t2
+     JAL ?EQ @CA2
+     CMP $a3 3
+     MOV ?GE $rv $t3
+     JMP $ra
+
+CA0: ADD $t1 $a0 $a1
+     DIV $t2 $a0 0  #div by zero signal! and $t2 == $a0
+     JMP $ra
+
+CA2: DIV $t3 $a2 -2
+     SHR $t4 $a2 1
+     SUB $t4 0 $t4
+     JMP $ra
+
+

@@ -1,0 +1,6 @@
+# the 1st test for the CPU design
+MOV $a0 1
+MOV $a1 2
+CMP $a0 $a1
+SUB ?LT $t1 $a0 $a1
+MOV $rv $t1

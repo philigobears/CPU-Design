@@ -1,0 +1,7 @@
+# the SHL and MUL test for the CPU design
+MOV $a0 2
+MOV $a1 3
+MOV $a2 1
+CMP $a0 $a1
+MUL ?LT $t1 $a1 $a0
+SHL ?LT $t2 $a1 $a2
